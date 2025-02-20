@@ -34,7 +34,7 @@ const Window = ({ title, isOpen, onClose, initialPosition, children }) => {
 
   return (
     <div
-      className="absolute bg-gray-800/95 backdrop-blur-md rounded-lg shadow-2xl border border-gray-700 min-w-[300px]"
+      className="absolute bg-gray-800/95 backdrop-blur-md rounded-lg shadow-2xl border border-gray-700 min-w-[240px]"
       style={{ 
         left: `${position.x}px`, 
         top: `${position.y}px`,
@@ -44,18 +44,18 @@ const Window = ({ title, isOpen, onClose, initialPosition, children }) => {
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
     >
-      <div className="window-header bg-gray-800/80 p-3 rounded-t-lg cursor-move flex items-center">
-        <div className="flex space-x-2 mr-4">
+      <div className="window-header bg-gray-800/80 p-2 rounded-t-lg cursor-move flex items-center">
+        <div className="flex space-x-1.5 mr-3">
           <button 
             onClick={onClose}
-            className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600"
+            className="w-2.5 h-2.5 rounded-full bg-red-500 hover:bg-red-600"
           />
-          <div className="w-3 h-3 rounded-full bg-yellow-500" />
-          <div className="w-3 h-3 rounded-full bg-green-500" />
+          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
+          <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
         </div>
-        <span className="text-gray-300 text-sm font-medium">{title}</span>
+        <span className="text-gray-300 text-xs font-medium">{title}</span>
       </div>
-      <div className="p-4 max-h-[500px] overflow-auto text-gray-200">
+      <div className="p-3 max-h-[400px] overflow-auto text-gray-200 text-sm">
         {children}
       </div>
     </div>
@@ -84,31 +84,31 @@ const OSPortfolio = () => {
     }));
   };
 
-  const skills = ["JavaScript", "React", "Next.js", "Node.js", "HTML/CSS", "Git", "TypeScript", "Tailwind CSS"];
+  const skills = ["JavaScript", "React", "Next.js", "Node.js", "HTML/CSS", "Turbowarp"];
   
   const projects = [
     {
-      title: "Project One",
-      description: "A full-stack web application built with React and Node.js",
-      tags: ["React", "Node.js", "MongoDB"]
+      title: "JoyzaOS",
+      description: "A work in progress web-project that simplifies down the process of coding and makes it easier to create small apps and share them",
+      tags: ["HTML", "JS"]
     },
     {
-      title: "Project Two",
-      description: "Mobile-first responsive website for a local business",
-      tags: ["Next.js", "Tailwind CSS", "Vercel"]
+      title: "Moral Protocol",
+      description: "FBLA Computer Game and Simulation winner.",
+      tags: ["HTML", "JS"]
     }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 p-8">
       {/* Dock */}
-      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-gray-800/40 backdrop-blur-md rounded-2xl border border-gray-700/50">
-        <div className="flex space-x-4">
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-gray-800/40 backdrop-blur-md rounded-2xl border border-gray-700/50">
+        <div className="flex space-x-3">
           <button 
             onClick={() => toggleWindow('about')}
             className="group flex flex-col items-center"
           >
-            <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center text-white mb-1 transform group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center text-white transform group-hover:scale-110 transition-transform">
               👤
             </div>
           </button>
@@ -117,7 +117,7 @@ const OSPortfolio = () => {
             onClick={() => toggleWindow('skills')}
             className="group flex flex-col items-center"
           >
-            <div className="w-12 h-12 bg-violet-500 rounded-xl flex items-center justify-center text-white mb-1 transform group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 bg-violet-500 rounded-lg flex items-center justify-center text-white transform group-hover:scale-110 transition-transform">
               💻
             </div>
           </button>
@@ -126,7 +126,7 @@ const OSPortfolio = () => {
             onClick={() => toggleWindow('projects')}
             className="group flex flex-col items-center"
           >
-            <div className="w-12 h-12 bg-indigo-500 rounded-xl flex items-center justify-center text-white mb-1 transform group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 bg-indigo-500 rounded-lg flex items-center justify-center text-white transform group-hover:scale-110 transition-transform">
               🚀
             </div>
           </button>
@@ -135,7 +135,7 @@ const OSPortfolio = () => {
             onClick={() => toggleWindow('contact')}
             className="group flex flex-col items-center"
           >
-            <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center text-white mb-1 transform group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center text-white transform group-hover:scale-110 transition-transform">
               ✉️
             </div>
           </button>
@@ -149,11 +149,11 @@ const OSPortfolio = () => {
         onClose={() => toggleWindow('about')}
         initialPosition={initialPositions.about}
       >
-        <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-gray-100">John Doe</h2>
-          <h3 className="text-xl text-gray-300">Full Stack Developer</h3>
-          <p className="text-gray-400">
-            I'm a passionate full-stack developer with 5 years of experience building web applications.
+        <div className="space-y-3">
+          <h2 className="text-xl font-bold text-gray-100">Lucas Saner</h2>
+          <h3 className="text-lg text-gray-300">Full Stack Developer and Game Designer</h3>
+          <p className="text-gray-400 text-sm">
+            I'm a passionate full-stack developer with 2 years of experience building web applications.
             I specialize in creating responsive, user-friendly interfaces and robust backend systems.
           </p>
         </div>
@@ -165,11 +165,11 @@ const OSPortfolio = () => {
         onClose={() => toggleWindow('skills')}
         initialPosition={initialPositions.skills}
       >
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5">
           {skills.map((skill) => (
             <span
               key={skill}
-              className="px-3 py-1 bg-blue-500/20 text-blue-200 rounded-full text-sm border border-blue-500/30"
+              className="px-2 py-0.5 bg-blue-500/20 text-blue-200 rounded-full text-xs border border-blue-500/30"
             >
               {skill}
             </span>
@@ -183,16 +183,16 @@ const OSPortfolio = () => {
         onClose={() => toggleWindow('projects')}
         initialPosition={initialPositions.projects}
       >
-        <div className="space-y-6">
+        <div className="space-y-4">
           {projects.map((project) => (
-            <div key={project.title} className="border-b border-gray-700 pb-4 last:border-0">
-              <h3 className="text-lg font-semibold text-gray-200">{project.title}</h3>
-              <p className="text-gray-400 mt-1">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mt-2">
+            <div key={project.title} className="border-b border-gray-700 pb-3 last:border-0">
+              <h3 className="text-base font-semibold text-gray-200">{project.title}</h3>
+              <p className="text-gray-400 mt-1 text-sm">{project.description}</p>
+              <div className="flex flex-wrap gap-1.5 mt-2">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2 py-1 bg-gray-700 text-gray-300 rounded-full text-xs"
+                    className="px-2 py-0.5 bg-gray-700 text-gray-300 rounded-full text-xs"
                   >
                     {tag}
                   </span>
@@ -209,18 +209,17 @@ const OSPortfolio = () => {
         onClose={() => toggleWindow('contact')}
         initialPosition={initialPositions.contact}
       >
-        <div className="space-y-4">
+        <div className="space-y-3">
           <div>
-            <h3 className="font-medium text-gray-200">Email</h3>
-            <a href="mailto:john@example.com" className="text-blue-400 hover:text-blue-300">
-              john@example.com
+            <h3 className="font-medium text-gray-200 text-sm">Email</h3>
+            <a href="mailto:lucas.s.saner@gmail.com" className="text-blue-400 hover:text-blue-300 text-sm">
+              lucas.s.saner@gmail.com
             </a>
           </div>
           <div>
-            <h3 className="font-medium text-gray-200">Social Links</h3>
-            <div className="space-y-2">
-              <a href="https://github.com" className="block text-blue-400 hover:text-blue-300">GitHub</a>
-              <a href="https://linkedin.com" className="block text-blue-400 hover:text-blue-300">LinkedIn</a>
+            <h3 className="font-medium text-gray-200 text-sm">Social Links</h3>
+            <div className="space-y-1">
+              <a href="https://github.com/JoyzaTech" className="block text-blue-400 hover:text-blue-300 text-sm">GitHub</a>
             </div>
           </div>
         </div>
